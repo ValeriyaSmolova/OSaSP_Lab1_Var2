@@ -1,0 +1,23 @@
+#!/bin/bash
+
+if [[ $# == 1 ]]
+then
+  if [ -d "$1" ]
+  then
+    for i in $(find "$1" -type f)
+    do
+      ls -l "$i" | awk '{print $1, $5, $9}'
+      let "count+= 1"
+    done
+
+    echo "Listed $count files."
+  else
+    echo "You have entered invalid parameter." >&2
+    echo "The parameter must be a directory." >&2
+  fi
+else
+  echo "Unexpected number of parameters. There should be 1 parameter."
+  echo "The parameter must be a directory."
+fi
+
+exit 0
