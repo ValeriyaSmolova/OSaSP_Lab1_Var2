@@ -1,0 +1,11 @@
+#!/bin/bash
+
+if [[ $#>0 ]]
+then
+  echo "You have entered the following arguments: $@"
+  echo "Arguments are $@" > arg.txt
+else
+  echo "You have not entered arguments into the command line."
+fi
+
+exit 0
