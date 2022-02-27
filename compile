@@ -19,7 +19,7 @@ then
 else
   echo "Unexpected number of parameters. There should be 2 parameters."
   echo "The 1st parameter - source file name."
-  echo "The 2nd parameter - exe-file"
+  echo "The 2nd parameter - exe-file."
 fi
 
 exit 0
