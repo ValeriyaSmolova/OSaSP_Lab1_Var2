@@ -1,0 +1,22 @@
+#!/bin/bash
+
+if [[ $# == 3 ]]
+then
+  if [[ -f "$1" && -d "$2" ]]
+  then
+    find "$2" -maxdepth 1 -type f -name "*.$3" | sort > $1
+  else
+    echo 'You have entered invalid parameters. The parameters must meet the requirements.' >&2
+    echo 'The 1st parameter - the name of the file to which the result will be output. The file must exist.' >&2
+    echo 'The 2nd parameter - the name of the directory in which the necessary files will be searched.' >&2
+    echo 'The 3rd parameter - file extension.' >&2
+  fi
+
+else
+  echo 'Unexpected number of parameters. There should be 3 parameters.'
+  echo 'The 1st parameter - the name of the file to which the result will be output.'
+  echo 'The 2nd parameter - the name of the directory in which the necessary files will be searched.'
+  echo 'The 3rd parameter - file extension.'
+fi
+
+exit 0
